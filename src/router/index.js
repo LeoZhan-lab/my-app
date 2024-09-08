@@ -1,5 +1,5 @@
 import { Children, Component } from "react";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate, redirect } from "react-router-dom";
 import Main from "../pages/main";
 import Home from "../pages/home";
 import Mall from "../pages/mall";
@@ -15,6 +15,7 @@ const routes = [
             {
                 path: '/',
                 element: <Navigate to="home" replace/>
+                // redirectTo: "home"
             },
             {
                 path: 'home',
