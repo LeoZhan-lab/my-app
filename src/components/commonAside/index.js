@@ -8,7 +8,8 @@ const { Header, Sider, Content } = Layout;
 
 //
 const iconToElement = (name) => React.createElement(Icon[name])
-// 
+
+//  
 const items = MenuConfig.map((icon) => {
 
     //There are no submenus

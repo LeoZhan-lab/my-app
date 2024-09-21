@@ -15,7 +15,6 @@ const routes = [
             {
                 path: '/',
                 element: <Navigate to="home" replace/>
-                // redirectTo: "home"
             },
             {
                 path: 'home',
