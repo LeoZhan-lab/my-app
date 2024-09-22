@@ -32,7 +32,8 @@ const items = MenuConfig.map((icon) => {
 
 
 
-const CommonAside = () => {
+const CommonAside = ({collapsed}) => {
+    console.log(collapsed, 'commonAside')
     return(
         <Sider trigger={null} collapsible >
                 <h3 className="app-name">Management System </h3>

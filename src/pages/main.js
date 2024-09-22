@@ -21,7 +21,7 @@ const Main = () => {
     } = theme.useToken();
 
     //
-    const collapsed = useSelector(state=>state.tab.isCollapse)
+    const collapsed = useSelector(state => state.tab.isCollapse)
 
     return (
         <Layout className="main-container">
