@@ -1,15 +1,44 @@
-import React, {useEffect } from "react";
-import {Col, Row, Card} from 'antd'
+import React, {useEffect, useState } from "react";
+import {Col, Row, Card, Table} from 'antd'
 import './home.css'
 import { getData } from "../../api";
+
+const columns = [
+    {
+        title:'Name',
+        dataIndex:'name'
+    },
+    {
+        title:'TodayBuy',
+        dataIndex:'todayBuy'
+    },
+    {
+        title:'MonthBuy',
+        dataIndex:'monthBuy'
+    },
+    {
+        title:'TotalBuy',
+        dataIndex:'totalBuy'
+    }
+]
+
+//
+const countData
 
 const Home = () => {
     const userImg = require("../../assets/images/header.jpg")
     useEffect(()=>{
-        getData().then((res)=>{
-            console.log(res, 'res')
+        getData().then(({data})=>{
+            console.log(data, 'res')
+            const {tableData} = data.data
+            setTableData(tableData)
         })
     }, [])
+
+    // Define table data
+    const [tableData, setTableData] = useState([])
+    // table column data
+    
 
     return (
         <Row className="home">
@@ -26,6 +55,9 @@ const Home = () => {
                         <p>Last login time:<span>2024-09-21</span></p>
                         <p>Last login location:<span>Japan</span></p>
                     </div>
+                </Card>
+                <Card>
+                    <Table rowKey={'name'} columns={columns} dataSource={tableData} pagination={false} />
                 </Card>
             </Col>
             <Col span={16}></Col>
