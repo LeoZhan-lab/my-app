@@ -35,8 +35,8 @@ const items = MenuConfig.map((icon) => {
 const CommonAside = ({collapsed}) => {
     console.log(collapsed, 'commonAside')
     return(
-        <Sider trigger={null} collapsible >
-                <h3 className="app-name">Management System </h3>
+        <Sider trigger={null} collapsed={collapsed} >
+                <h3 className="app-name">{collapsed? 'System' : 'Management System'} </h3>
                 {/* <div className="demo-logo-vertical" /> */}
                 <Menu
                     theme="dark"
@@ -46,6 +46,7 @@ const CommonAside = ({collapsed}) => {
                     style={{
                         height: '100%'
                     }}
+
                 />
             </Sider>
     )
